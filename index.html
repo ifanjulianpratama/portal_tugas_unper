@@ -19,6 +19,8 @@
         <a href="#beranda" class="hover:text-[#edbb00] transition">Beranda</a>
         <a href="#profil" class="hover:text-[#edbb00] transition">Profil</a>
         <a href="#pengumpulan-tugas" class="hover:text-[#edbb00] transition">Pengumpulan Tugas</a>
+        <a href="#postingan-tugas-1" class="hover:text-[#edbb00] transition">Tugas 1</a>
+        <a href="#postingan-tugas-2" class="hover:text-[#edbb00] transition">Tugas 2</a>
         <button type="button" onclick="toggleTokenModal()" class="px-3.5 py-1.5 rounded-xl bg-white/10 hover:bg-white/20 text-xs font-bold text-[#edbb00] border border-[#edbb00]/40 transition">
           ⚙ Token
         </button>
@@ -40,6 +42,8 @@
       <a href="#beranda" onclick="closeMobileMenu()" class="block py-2 px-3 rounded-xl hover:bg-white/10">Beranda</a>
       <a href="#profil" onclick="closeMobileMenu()" class="block py-2 px-3 rounded-xl hover:bg-white/10">Profil Mahasiswa</a>
       <a href="#pengumpulan-tugas" onclick="closeMobileMenu()" class="block py-2 px-3 rounded-xl hover:bg-white/10">Pengumpulan Tugas</a>
+      <a href="#postingan-tugas-1" onclick="closeMobileMenu()" class="block py-2 px-3 rounded-xl hover:bg-white/10">Postingan Tugas 1</a>
+      <a href="#postingan-tugas-2" onclick="closeMobileMenu()" class="block py-2 px-3 rounded-xl hover:bg-white/10">Postingan Tugas 2</a>
     </div>
   </nav>
 
@@ -167,6 +171,615 @@
           </div>
 
           <div id="daftar-tugas" class="grid grid-cols-1 md:grid-cols-2 gap-4"></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 4. POSTINGAN TUGAS 1 (TABEL & ARAH PERGERAKAN HEAD DISK LANGSUNG DI HALAMAN WEB) -->
+    <section id="postingan-tugas-1" class="space-y-4 scroll-mt-20">
+      <div class="flex flex-wrap items-center justify-between gap-2">
+        <h2 class="text-xl sm:text-2xl font-extrabold text-white">Postingan Tugas 1 — Penjadwalan Disk</h2>
+        <span class="text-[11px] font-bold px-3 py-1 rounded-full bg-[#edbb00]/20 text-[#edbb00] border border-[#edbb00]/40">
+          Posisi Awal Head: 50
+        </span>
+      </div>
+
+      <div class="barca-card rounded-3xl p-5 sm:p-8 space-y-6">
+        <!-- Ringkasan & Arah Pergerakan Head Seluruh Algoritma -->
+        <div class="barca-subcard rounded-2xl p-4 sm:p-5 space-y-3">
+          <p class="text-xs font-extrabold uppercase tracking-wider text-[#edbb00]">Rekapitulasi &amp; Arah Pergerakan Head</p>
+          <p class="text-[11px] text-slate-300">
+            Rumus <strong>Jarak Jejak per Langkah</strong> = |Posisi Tujuan &minus; Posisi Asal|.
+          </p>
+          <div class="overflow-x-auto">
+            <table class="w-full text-left border-collapse text-xs sm:text-sm text-slate-200">
+              <thead>
+                <tr class="border-b border-white/15 bg-black/30 text-[#edbb00]">
+                  <th class="py-2 px-3">Algoritma</th>
+                  <th class="py-2 px-3">Total Jejak</th>
+                  <th class="py-2 px-3">Rata-Rata / Langkah</th>
+                  <th class="py-2 px-3">Arah / Urutan Silinder</th>
+                </tr>
+              </thead>
+              <tbody class="divide-y divide-white/10">
+                <tr>
+                  <td class="py-2 px-3 font-bold text-white">FCFS</td>
+                  <td class="py-2 px-3 font-bold text-[#edbb00]">1.348</td>
+                  <td class="py-2 px-3">84,25</td>
+                  <td class="py-2 px-3 text-xs">50 &rarr; 62 &rarr; 170 &rarr; 43 &rarr; 150 &rarr; 23 &rarr; 16 &rarr; 185 &rarr; 123 &rarr; 67 &rarr; 43 &rarr; 162 &rarr; 23 &rarr; 71 &rarr; 111 &rarr; 43 &rarr; 178</td>
+                </tr>
+                <tr>
+                  <td class="py-2 px-3 font-bold text-white">SSTF</td>
+                  <td class="py-2 px-3 font-bold text-[#edbb00]">203</td>
+                  <td class="py-2 px-3">12,69</td>
+                  <td class="py-2 px-3 text-xs">50 &rarr; 43 &rarr; 43 &rarr; 43 &rarr; 23 &rarr; 23 &rarr; 16 &rarr; 62 &rarr; 67 &rarr; 71 &rarr; 111 &rarr; 123 &rarr; 150 &rarr; 162 &rarr; 170 &rarr; 178 &rarr; 185</td>
+                </tr>
+                <tr>
+                  <td class="py-2 px-3 font-bold text-white">SCAN</td>
+                  <td class="py-2 px-3 font-bold text-[#edbb00]">332</td>
+                  <td class="py-2 px-3">19,53</td>
+                  <td class="py-2 px-3 text-xs">50 &rarr; 62 &rarr; 67 &rarr; 71 &rarr; 111 &rarr; 123 &rarr; 150 &rarr; 162 &rarr; 170 &rarr; 178 &rarr; 185 &rarr; 199 &rarr; 43 &rarr; 43 &rarr; 43 &rarr; 23 &rarr; 23 &rarr; 16</td>
+                </tr>
+                <tr>
+                  <td class="py-2 px-3 font-bold text-white">C-SCAN</td>
+                  <td class="py-2 px-3 font-bold text-[#edbb00]">391</td>
+                  <td class="py-2 px-3">21,72</td>
+                  <td class="py-2 px-3 text-xs">50 &rarr; 62 &rarr; 67 &rarr; 71 &rarr; 111 &rarr; 123 &rarr; 150 &rarr; 162 &rarr; 170 &rarr; 178 &rarr; 185 &rarr; 199 &rarr; 0 &rarr; 16 &rarr; 23 &rarr; 23 &rarr; 43 &rarr; 43 &rarr; 43</td>
+                </tr>
+                <tr>
+                  <td class="py-2 px-3 font-bold text-white">LOOK</td>
+                  <td class="py-2 px-3 font-bold text-[#edbb00]">304</td>
+                  <td class="py-2 px-3">19,00</td>
+                  <td class="py-2 px-3 text-xs">50 &rarr; 62 &rarr; 67 &rarr; 71 &rarr; 111 &rarr; 123 &rarr; 150 &rarr; 162 &rarr; 170 &rarr; 178 &rarr; 185 &rarr; 43 &rarr; 43 &rarr; 43 &rarr; 23 &rarr; 23 &rarr; 16</td>
+                </tr>
+                <tr>
+                  <td class="py-2 px-3 font-bold text-white">C-LOOK</td>
+                  <td class="py-2 px-3 font-bold text-[#edbb00]">331</td>
+                  <td class="py-2 px-3">20,69</td>
+                  <td class="py-2 px-3 text-xs">50 &rarr; 62 &rarr; 67 &rarr; 71 &rarr; 111 &rarr; 123 &rarr; 150 &rarr; 162 &rarr; 170 &rarr; 178 &rarr; 185 &rarr; 16 &rarr; 23 &rarr; 23 &rarr; 43 &rarr; 43 &rarr; 43</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+        <!-- 1. FCFS -->
+        <div class="barca-subcard rounded-2xl p-4 sm:p-5 space-y-3">
+          <h3 class="text-base font-extrabold text-white">1. FCFS (First-Come, First-Served)</h3>
+          <p class="text-xs text-[#edbb00] font-semibold leading-relaxed">
+            Arah Proses: 50 &rarr; 62 &rarr; 170 &rarr; 43 &rarr; 150 &rarr; 23 &rarr; 16 &rarr; 185 &rarr; 123 &rarr; 67 &rarr; 43 &rarr; 162 &rarr; 23 &rarr; 71 &rarr; 111 &rarr; 43 &rarr; 178
+          </p>
+          <div class="overflow-x-auto">
+            <table class="w-full text-left border-collapse text-xs text-slate-200">
+              <thead>
+                <tr class="border-b border-white/15 bg-black/30 text-white">
+                  <th class="py-2 px-2.5">Langkah</th>
+                  <th class="py-2 px-2.5">Posisi Awal</th>
+                  <th class="py-2 px-2.5">Posisi Tujuan</th>
+                  <th class="py-2 px-2.5">Jejak (|Tujuan &minus; Awal|)</th>
+                </tr>
+              </thead>
+              <tbody class="divide-y divide-white/10">
+                <tr><td class="py-1 px-2.5">1</td><td class="py-1 px-2.5">50</td><td class="py-1 px-2.5">62</td><td class="py-1 px-2.5">12</td></tr>
+                <tr><td class="py-1 px-2.5">2</td><td class="py-1 px-2.5">62</td><td class="py-1 px-2.5">170</td><td class="py-1 px-2.5">108</td></tr>
+                <tr><td class="py-1 px-2.5">3</td><td class="py-1 px-2.5">170</td><td class="py-1 px-2.5">43</td><td class="py-1 px-2.5">127</td></tr>
+                <tr><td class="py-1 px-2.5">4</td><td class="py-1 px-2.5">43</td><td class="py-1 px-2.5">150</td><td class="py-1 px-2.5">107</td></tr>
+                <tr><td class="py-1 px-2.5">5</td><td class="py-1 px-2.5">150</td><td class="py-1 px-2.5">23</td><td class="py-1 px-2.5">127</td></tr>
+                <tr><td class="py-1 px-2.5">6</td><td class="py-1 px-2.5">23</td><td class="py-1 px-2.5">16</td><td class="py-1 px-2.5">7</td></tr>
+                <tr><td class="py-1 px-2.5">7</td><td class="py-1 px-2.5">16</td><td class="py-1 px-2.5">185</td><td class="py-1 px-2.5">169</td></tr>
+                <tr><td class="py-1 px-2.5">8</td><td class="py-1 px-2.5">185</td><td class="py-1 px-2.5">123</td><td class="py-1 px-2.5">62</td></tr>
+                <tr><td class="py-1 px-2.5">9</td><td class="py-1 px-2.5">123</td><td class="py-1 px-2.5">67</td><td class="py-1 px-2.5">56</td></tr>
+                <tr><td class="py-1 px-2.5">10</td><td class="py-1 px-2.5">67</td><td class="py-1 px-2.5">43</td><td class="py-1 px-2.5">24</td></tr>
+                <tr><td class="py-1 px-2.5">11</td><td class="py-1 px-2.5">43</td><td class="py-1 px-2.5">162</td><td class="py-1 px-2.5">119</td></tr>
+                <tr><td class="py-1 px-2.5">12</td><td class="py-1 px-2.5">162</td><td class="py-1 px-2.5">23</td><td class="py-1 px-2.5">139</td></tr>
+                <tr><td class="py-1 px-2.5">13</td><td class="py-1 px-2.5">23</td><td class="py-1 px-2.5">71</td><td class="py-1 px-2.5">48</td></tr>
+                <tr><td class="py-1 px-2.5">14</td><td class="py-1 px-2.5">71</td><td class="py-1 px-2.5">111</td><td class="py-1 px-2.5">40</td></tr>
+                <tr><td class="py-1 px-2.5">15</td><td class="py-1 px-2.5">111</td><td class="py-1 px-2.5">43</td><td class="py-1 px-2.5">68</td></tr>
+                <tr><td class="py-1 px-2.5">16</td><td class="py-1 px-2.5">43</td><td class="py-1 px-2.5">178</td><td class="py-1 px-2.5">135</td></tr>
+                <tr class="bg-white/10 font-bold text-[#edbb00]">
+                  <td class="py-1.5 px-2.5" colspan="3">Total Jejak Silinder</td>
+                  <td class="py-1.5 px-2.5">1.348</td>
+                </tr>
+                <tr class="bg-white/5 font-bold text-white">
+                  <td class="py-1.5 px-2.5" colspan="3">Rata-Rata per Langkah (1.348 / 16)</td>
+                  <td class="py-1.5 px-2.5">84,25</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+        <!-- 2. SSTF -->
+        <div class="barca-subcard rounded-2xl p-4 sm:p-5 space-y-3">
+          <h3 class="text-base font-extrabold text-white">2. SSTF (Shortest Seek Time First)</h3>
+          <p class="text-xs text-[#edbb00] font-semibold leading-relaxed">
+            Arah Proses: 50 &rarr; 43 &rarr; 43 &rarr; 43 &rarr; 23 &rarr; 23 &rarr; 16 &rarr; 62 &rarr; 67 &rarr; 71 &rarr; 111 &rarr; 123 &rarr; 150 &rarr; 162 &rarr; 170 &rarr; 178 &rarr; 185
+          </p>
+          <div class="overflow-x-auto">
+            <table class="w-full text-left border-collapse text-xs text-slate-200">
+              <thead>
+                <tr class="border-b border-white/15 bg-black/30 text-white">
+                  <th class="py-2 px-2.5">Langkah</th>
+                  <th class="py-2 px-2.5">Posisi Awal</th>
+                  <th class="py-2 px-2.5">Posisi Tujuan</th>
+                  <th class="py-2 px-2.5">Jejak (|Tujuan &minus; Awal|)</th>
+                </tr>
+              </thead>
+              <tbody class="divide-y divide-white/10">
+                <tr><td class="py-1 px-2.5">1</td><td class="py-1 px-2.5">50</td><td class="py-1 px-2.5">43</td><td class="py-1 px-2.5">7</td></tr>
+                <tr><td class="py-1 px-2.5">2</td><td class="py-1 px-2.5">43</td><td class="py-1 px-2.5">43</td><td class="py-1 px-2.5">0</td></tr>
+                <tr><td class="py-1 px-2.5">3</td><td class="py-1 px-2.5">43</td><td class="py-1 px-2.5">43</td><td class="py-1 px-2.5">0</td></tr>
+                <tr><td class="py-1 px-2.5">4</td><td class="py-1 px-2.5">43</td><td class="py-1 px-2.5">23</td><td class="py-1 px-2.5">20</td></tr>
+                <tr><td class="py-1 px-2.5">5</td><td class="py-1 px-2.5">23</td><td class="py-1 px-2.5">23</td><td class="py-1 px-2.5">0</td></tr>
+                <tr><td class="py-1 px-2.5">6</td><td class="py-1 px-2.5">23</td><td class="py-1 px-2.5">16</td><td class="py-1 px-2.5">7</td></tr>
+                <tr><td class="py-1 px-2.5">7</td><td class="py-1 px-2.5">16</td><td class="py-1 px-2.5">62</td><td class="py-1 px-2.5">46</td></tr>
+                <tr><td class="py-1 px-2.5">8</td><td class="py-1 px-2.5">62</td><td class="py-1 px-2.5">67</td><td class="py-1 px-2.5">5</td></tr>
+                <tr><td class="py-1 px-2.5">9</td><td class="py-1 px-2.5">67</td><td class="py-1 px-2.5">71</td><td class="py-1 px-2.5">4</td></tr>
+                <tr><td class="py-1 px-2.5">10</td><td class="py-1 px-2.5">71</td><td class="py-1 px-2.5">111</td><td class="py-1 px-2.5">40</td></tr>
+                <tr><td class="py-1 px-2.5">11</td><td class="py-1 px-2.5">111</td><td class="py-1 px-2.5">123</td><td class="py-1 px-2.5">12</td></tr>
+                <tr><td class="py-1 px-2.5">12</td><td class="py-1 px-2.5">123</td><td class="py-1 px-2.5">150</td><td class="py-1 px-2.5">27</td></tr>
+                <tr><td class="py-1 px-2.5">13</td><td class="py-1 px-2.5">150</td><td class="py-1 px-2.5">162</td><td class="py-1 px-2.5">12</td></tr>
+                <tr><td class="py-1 px-2.5">14</td><td class="py-1 px-2.5">162</td><td class="py-1 px-2.5">170</td><td class="py-1 px-2.5">8</td></tr>
+                <tr><td class="py-1 px-2.5">15</td><td class="py-1 px-2.5">170</td><td class="py-1 px-2.5">178</td><td class="py-1 px-2.5">8</td></tr>
+                <tr><td class="py-1 px-2.5">16</td><td class="py-1 px-2.5">178</td><td class="py-1 px-2.5">185</td><td class="py-1 px-2.5">7</td></tr>
+                <tr class="bg-white/10 font-bold text-[#edbb00]">
+                  <td class="py-1.5 px-2.5" colspan="3">Total Jejak Silinder</td>
+                  <td class="py-1.5 px-2.5">203</td>
+                </tr>
+                <tr class="bg-white/5 font-bold text-white">
+                  <td class="py-1.5 px-2.5" colspan="3">Rata-Rata per Langkah (203 / 16)</td>
+                  <td class="py-1.5 px-2.5">12,69</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+        <!-- 3. SCAN -->
+        <div class="barca-subcard rounded-2xl p-4 sm:p-5 space-y-3">
+          <h3 class="text-base font-extrabold text-white">3. SCAN (Elevator)</h3>
+          <p class="text-xs text-[#edbb00] font-semibold leading-relaxed">
+            Arah Proses: 50 &rarr; 62 &rarr; 67 &rarr; 71 &rarr; 111 &rarr; 123 &rarr; 150 &rarr; 162 &rarr; 170 &rarr; 178 &rarr; 185 &rarr; 199 &rarr; 43 &rarr; 43 &rarr; 43 &rarr; 23 &rarr; 23 &rarr; 16
+          </p>
+          <div class="overflow-x-auto">
+            <table class="w-full text-left border-collapse text-xs text-slate-200">
+              <thead>
+                <tr class="border-b border-white/15 bg-black/30 text-white">
+                  <th class="py-2 px-2.5">Langkah</th>
+                  <th class="py-2 px-2.5">Posisi Awal</th>
+                  <th class="py-2 px-2.5">Posisi Tujuan</th>
+                  <th class="py-2 px-2.5">Jejak (|Tujuan &minus; Awal|)</th>
+                </tr>
+              </thead>
+              <tbody class="divide-y divide-white/10">
+                <tr><td class="py-1 px-2.5">1</td><td class="py-1 px-2.5">50</td><td class="py-1 px-2.5">62</td><td class="py-1 px-2.5">12</td></tr>
+                <tr><td class="py-1 px-2.5">2</td><td class="py-1 px-2.5">62</td><td class="py-1 px-2.5">67</td><td class="py-1 px-2.5">5</td></tr>
+                <tr><td class="py-1 px-2.5">3</td><td class="py-1 px-2.5">67</td><td class="py-1 px-2.5">71</td><td class="py-1 px-2.5">4</td></tr>
+                <tr><td class="py-1 px-2.5">4</td><td class="py-1 px-2.5">71</td><td class="py-1 px-2.5">111</td><td class="py-1 px-2.5">40</td></tr>
+                <tr><td class="py-1 px-2.5">5</td><td class="py-1 px-2.5">111</td><td class="py-1 px-2.5">123</td><td class="py-1 px-2.5">12</td></tr>
+                <tr><td class="py-1 px-2.5">6</td><td class="py-1 px-2.5">123</td><td class="py-1 px-2.5">150</td><td class="py-1 px-2.5">27</td></tr>
+                <tr><td class="py-1 px-2.5">7</td><td class="py-1 px-2.5">150</td><td class="py-1 px-2.5">162</td><td class="py-1 px-2.5">12</td></tr>
+                <tr><td class="py-1 px-2.5">8</td><td class="py-1 px-2.5">162</td><td class="py-1 px-2.5">170</td><td class="py-1 px-2.5">8</td></tr>
+                <tr><td class="py-1 px-2.5">9</td><td class="py-1 px-2.5">170</td><td class="py-1 px-2.5">178</td><td class="py-1 px-2.5">8</td></tr>
+                <tr><td class="py-1 px-2.5">10</td><td class="py-1 px-2.5">178</td><td class="py-1 px-2.5">185</td><td class="py-1 px-2.5">7</td></tr>
+                <tr><td class="py-1 px-2.5">11</td><td class="py-1 px-2.5">185</td><td class="py-1 px-2.5">199</td><td class="py-1 px-2.5">14</td></tr>
+                <tr><td class="py-1 px-2.5">12</td><td class="py-1 px-2.5">199</td><td class="py-1 px-2.5">43</td><td class="py-1 px-2.5">156</td></tr>
+                <tr><td class="py-1 px-2.5">13</td><td class="py-1 px-2.5">43</td><td class="py-1 px-2.5">43</td><td class="py-1 px-2.5">0</td></tr>
+                <tr><td class="py-1 px-2.5">14</td><td class="py-1 px-2.5">43</td><td class="py-1 px-2.5">43</td><td class="py-1 px-2.5">0</td></tr>
+                <tr><td class="py-1 px-2.5">15</td><td class="py-1 px-2.5">43</td><td class="py-1 px-2.5">23</td><td class="py-1 px-2.5">20</td></tr>
+                <tr><td class="py-1 px-2.5">16</td><td class="py-1 px-2.5">23</td><td class="py-1 px-2.5">23</td><td class="py-1 px-2.5">0</td></tr>
+                <tr><td class="py-1 px-2.5">17</td><td class="py-1 px-2.5">23</td><td class="py-1 px-2.5">16</td><td class="py-1 px-2.5">7</td></tr>
+                <tr class="bg-white/10 font-bold text-[#edbb00]">
+                  <td class="py-1.5 px-2.5" colspan="3">Total Jejak Silinder</td>
+                  <td class="py-1.5 px-2.5">332</td>
+                </tr>
+                <tr class="bg-white/5 font-bold text-white">
+                  <td class="py-1.5 px-2.5" colspan="3">Rata-Rata per Langkah (332 / 17)</td>
+                  <td class="py-1.5 px-2.5">19,53</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+        <!-- 4. C-SCAN -->
+        <div class="barca-subcard rounded-2xl p-4 sm:p-5 space-y-3">
+          <h3 class="text-base font-extrabold text-white">4. C-SCAN (Circular SCAN)</h3>
+          <p class="text-xs text-[#edbb00] font-semibold leading-relaxed">
+            Arah Proses: 50 &rarr; 62 &rarr; 67 &rarr; 71 &rarr; 111 &rarr; 123 &rarr; 150 &rarr; 162 &rarr; 170 &rarr; 178 &rarr; 185 &rarr; 199 &rarr; 0 &rarr; 16 &rarr; 23 &rarr; 23 &rarr; 43 &rarr; 43 &rarr; 43
+          </p>
+          <div class="overflow-x-auto">
+            <table class="w-full text-left border-collapse text-xs text-slate-200">
+              <thead>
+                <tr class="border-b border-white/15 bg-black/30 text-white">
+                  <th class="py-2 px-2.5">Langkah</th>
+                  <th class="py-2 px-2.5">Posisi Awal</th>
+                  <th class="py-2 px-2.5">Posisi Tujuan</th>
+                  <th class="py-2 px-2.5">Jejak (|Tujuan &minus; Awal|)</th>
+                </tr>
+              </thead>
+              <tbody class="divide-y divide-white/10">
+                <tr><td class="py-1 px-2.5">1</td><td class="py-1 px-2.5">50</td><td class="py-1 px-2.5">62</td><td class="py-1 px-2.5">12</td></tr>
+                <tr><td class="py-1 px-2.5">2</td><td class="py-1 px-2.5">62</td><td class="py-1 px-2.5">67</td><td class="py-1 px-2.5">5</td></tr>
+                <tr><td class="py-1 px-2.5">3</td><td class="py-1 px-2.5">67</td><td class="py-1 px-2.5">71</td><td class="py-1 px-2.5">4</td></tr>
+                <tr><td class="py-1 px-2.5">4</td><td class="py-1 px-2.5">71</td><td class="py-1 px-2.5">111</td><td class="py-1 px-2.5">40</td></tr>
+                <tr><td class="py-1 px-2.5">5</td><td class="py-1 px-2.5">111</td><td class="py-1 px-2.5">123</td><td class="py-1 px-2.5">12</td></tr>
+                <tr><td class="py-1 px-2.5">6</td><td class="py-1 px-2.5">123</td><td class="py-1 px-2.5">150</td><td class="py-1 px-2.5">27</td></tr>
+                <tr><td class="py-1 px-2.5">7</td><td class="py-1 px-2.5">150</td><td class="py-1 px-2.5">162</td><td class="py-1 px-2.5">12</td></tr>
+                <tr><td class="py-1 px-2.5">8</td><td class="py-1 px-2.5">162</td><td class="py-1 px-2.5">170</td><td class="py-1 px-2.5">8</td></tr>
+                <tr><td class="py-1 px-2.5">9</td><td class="py-1 px-2.5">170</td><td class="py-1 px-2.5">178</td><td class="py-1 px-2.5">8</td></tr>
+                <tr><td class="py-1 px-2.5">10</td><td class="py-1 px-2.5">178</td><td class="py-1 px-2.5">185</td><td class="py-1 px-2.5">7</td></tr>
+                <tr><td class="py-1 px-2.5">11</td><td class="py-1 px-2.5">185</td><td class="py-1 px-2.5">199</td><td class="py-1 px-2.5">14</td></tr>
+                <tr><td class="py-1 px-2.5">12</td><td class="py-1 px-2.5">199</td><td class="py-1 px-2.5">0</td><td class="py-1 px-2.5">199</td></tr>
+                <tr><td class="py-1 px-2.5">13</td><td class="py-1 px-2.5">0</td><td class="py-1 px-2.5">16</td><td class="py-1 px-2.5">16</td></tr>
+                <tr><td class="py-1 px-2.5">14</td><td class="py-1 px-2.5">16</td><td class="py-1 px-2.5">23</td><td class="py-1 px-2.5">7</td></tr>
+                <tr><td class="py-1 px-2.5">15</td><td class="py-1 px-2.5">23</td><td class="py-1 px-2.5">23</td><td class="py-1 px-2.5">0</td></tr>
+                <tr><td class="py-1 px-2.5">16</td><td class="py-1 px-2.5">23</td><td class="py-1 px-2.5">43</td><td class="py-1 px-2.5">20</td></tr>
+                <tr><td class="py-1 px-2.5">17</td><td class="py-1 px-2.5">43</td><td class="py-1 px-2.5">43</td><td class="py-1 px-2.5">0</td></tr>
+                <tr><td class="py-1 px-2.5">18</td><td class="py-1 px-2.5">43</td><td class="py-1 px-2.5">43</td><td class="py-1 px-2.5">0</td></tr>
+                <tr class="bg-white/10 font-bold text-[#edbb00]">
+                  <td class="py-1.5 px-2.5" colspan="3">Total Jejak Silinder</td>
+                  <td class="py-1.5 px-2.5">391</td>
+                </tr>
+                <tr class="bg-white/5 font-bold text-white">
+                  <td class="py-1.5 px-2.5" colspan="3">Rata-Rata per Langkah (391 / 18)</td>
+                  <td class="py-1.5 px-2.5">21,72</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+        <!-- 5. LOOK -->
+        <div class="barca-subcard rounded-2xl p-4 sm:p-5 space-y-3">
+          <h3 class="text-base font-extrabold text-white">5. LOOK</h3>
+          <p class="text-xs text-[#edbb00] font-semibold leading-relaxed">
+            Arah Proses: 50 &rarr; 62 &rarr; 67 &rarr; 71 &rarr; 111 &rarr; 123 &rarr; 150 &rarr; 162 &rarr; 170 &rarr; 178 &rarr; 185 &rarr; 43 &rarr; 43 &rarr; 43 &rarr; 23 &rarr; 23 &rarr; 16
+          </p>
+          <div class="overflow-x-auto">
+            <table class="w-full text-left border-collapse text-xs text-slate-200">
+              <thead>
+                <tr class="border-b border-white/15 bg-black/30 text-white">
+                  <th class="py-2 px-2.5">Langkah</th>
+                  <th class="py-2 px-2.5">Posisi Awal</th>
+                  <th class="py-2 px-2.5">Posisi Tujuan</th>
+                  <th class="py-2 px-2.5">Jejak (|Tujuan &minus; Awal|)</th>
+                </tr>
+              </thead>
+              <tbody class="divide-y divide-white/10">
+                <tr><td class="py-1 px-2.5">1</td><td class="py-1 px-2.5">50</td><td class="py-1 px-2.5">62</td><td class="py-1 px-2.5">12</td></tr>
+                <tr><td class="py-1 px-2.5">2</td><td class="py-1 px-2.5">62</td><td class="py-1 px-2.5">67</td><td class="py-1 px-2.5">5</td></tr>
+                <tr><td class="py-1 px-2.5">3</td><td class="py-1 px-2.5">67</td><td class="py-1 px-2.5">71</td><td class="py-1 px-2.5">4</td></tr>
+                <tr><td class="py-1 px-2.5">4</td><td class="py-1 px-2.5">71</td><td class="py-1 px-2.5">111</td><td class="py-1 px-2.5">40</td></tr>
+                <tr><td class="py-1 px-2.5">5</td><td class="py-1 px-2.5">111</td><td class="py-1 px-2.5">123</td><td class="py-1 px-2.5">12</td></tr>
+                <tr><td class="py-1 px-2.5">6</td><td class="py-1 px-2.5">123</td><td class="py-1 px-2.5">150</td><td class="py-1 px-2.5">27</td></tr>
+                <tr><td class="py-1 px-2.5">7</td><td class="py-1 px-2.5">150</td><td class="py-1 px-2.5">162</td><td class="py-1 px-2.5">12</td></tr>
+                <tr><td class="py-1 px-2.5">8</td><td class="py-1 px-2.5">162</td><td class="py-1 px-2.5">170</td><td class="py-1 px-2.5">8</td></tr>
+                <tr><td class="py-1 px-2.5">9</td><td class="py-1 px-2.5">170</td><td class="py-1 px-2.5">178</td><td class="py-1 px-2.5">8</td></tr>
+                <tr><td class="py-1 px-2.5">10</td><td class="py-1 px-2.5">178</td><td class="py-1 px-2.5">185</td><td class="py-1 px-2.5">7</td></tr>
+                <tr><td class="py-1 px-2.5">11</td><td class="py-1 px-2.5">185</td><td class="py-1 px-2.5">43</td><td class="py-1 px-2.5">142</td></tr>
+                <tr><td class="py-1 px-2.5">12</td><td class="py-1 px-2.5">43</td><td class="py-1 px-2.5">43</td><td class="py-1 px-2.5">0</td></tr>
+                <tr><td class="py-1 px-2.5">13</td><td class="py-1 px-2.5">43</td><td class="py-1 px-2.5">43</td><td class="py-1 px-2.5">0</td></tr>
+                <tr><td class="py-1 px-2.5">14</td><td class="py-1 px-2.5">43</td><td class="py-1 px-2.5">23</td><td class="py-1 px-2.5">20</td></tr>
+                <tr><td class="py-1 px-2.5">15</td><td class="py-1 px-2.5">23</td><td class="py-1 px-2.5">23</td><td class="py-1 px-2.5">0</td></tr>
+                <tr><td class="py-1 px-2.5">16</td><td class="py-1 px-2.5">23</td><td class="py-1 px-2.5">16</td><td class="py-1 px-2.5">7</td></tr>
+                <tr class="bg-white/10 font-bold text-[#edbb00]">
+                  <td class="py-1.5 px-2.5" colspan="3">Total Jejak Silinder</td>
+                  <td class="py-1.5 px-2.5">304</td>
+                </tr>
+                <tr class="bg-white/5 font-bold text-white">
+                  <td class="py-1.5 px-2.5" colspan="3">Rata-Rata per Langkah (304 / 16)</td>
+                  <td class="py-1.5 px-2.5">19,00</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+        <!-- 6. C-LOOK -->
+        <div class="barca-subcard rounded-2xl p-4 sm:p-5 space-y-3">
+          <h3 class="text-base font-extrabold text-white">6. C-LOOK (Circular LOOK)</h3>
+          <p class="text-xs text-[#edbb00] font-semibold leading-relaxed">
+            Arah Proses: 50 &rarr; 62 &rarr; 67 &rarr; 71 &rarr; 111 &rarr; 123 &rarr; 150 &rarr; 162 &rarr; 170 &rarr; 178 &rarr; 185 &rarr; 16 &rarr; 23 &rarr; 23 &rarr; 43 &rarr; 43 &rarr; 43
+          </p>
+          <div class="overflow-x-auto">
+            <table class="w-full text-left border-collapse text-xs text-slate-200">
+              <thead>
+                <tr class="border-b border-white/15 bg-black/30 text-white">
+                  <th class="py-2 px-2.5">Langkah</th>
+                  <th class="py-2 px-2.5">Posisi Awal</th>
+                  <th class="py-2 px-2.5">Posisi Tujuan</th>
+                  <th class="py-2 px-2.5">Jejak (|Tujuan &minus; Awal|)</th>
+                </tr>
+              </thead>
+              <tbody class="divide-y divide-white/10">
+                <tr><td class="py-1 px-2.5">1</td><td class="py-1 px-2.5">50</td><td class="py-1 px-2.5">62</td><td class="py-1 px-2.5">12</td></tr>
+                <tr><td class="py-1 px-2.5">2</td><td class="py-1 px-2.5">62</td><td class="py-1 px-2.5">67</td><td class="py-1 px-2.5">5</td></tr>
+                <tr><td class="py-1 px-2.5">3</td><td class="py-1 px-2.5">67</td><td class="py-1 px-2.5">71</td><td class="py-1 px-2.5">4</td></tr>
+                <tr><td class="py-1 px-2.5">4</td><td class="py-1 px-2.5">71</td><td class="py-1 px-2.5">111</td><td class="py-1 px-2.5">40</td></tr>
+                <tr><td class="py-1 px-2.5">5</td><td class="py-1 px-2.5">111</td><td class="py-1 px-2.5">123</td><td class="py-1 px-2.5">12</td></tr>
+                <tr><td class="py-1 px-2.5">6</td><td class="py-1 px-2.5">123</td><td class="py-1 px-2.5">150</td><td class="py-1 px-2.5">27</td></tr>
+                <tr><td class="py-1 px-2.5">7</td><td class="py-1 px-2.5">150</td><td class="py-1 px-2.5">162</td><td class="py-1 px-2.5">12</td></tr>
+                <tr><td class="py-1 px-2.5">8</td><td class="py-1 px-2.5">162</td><td class="py-1 px-2.5">170</td><td class="py-1 px-2.5">8</td></tr>
+                <tr><td class="py-1 px-2.5">9</td><td class="py-1 px-2.5">170</td><td class="py-1 px-2.5">178</td><td class="py-1 px-2.5">8</td></tr>
+                <tr><td class="py-1 px-2.5">10</td><td class="py-1 px-2.5">178</td><td class="py-1 px-2.5">185</td><td class="py-1 px-2.5">7</td></tr>
+                <tr><td class="py-1 px-2.5">11</td><td class="py-1 px-2.5">185</td><td class="py-1 px-2.5">16</td><td class="py-1 px-2.5">169</td></tr>
+                <tr><td class="py-1 px-2.5">12</td><td class="py-1 px-2.5">16</td><td class="py-1 px-2.5">23</td><td class="py-1 px-2.5">7</td></tr>
+                <tr><td class="py-1 px-2.5">13</td><td class="py-1 px-2.5">23</td><td class="py-1 px-2.5">23</td><td class="py-1 px-2.5">0</td></tr>
+                <tr><td class="py-1 px-2.5">14</td><td class="py-1 px-2.5">23</td><td class="py-1 px-2.5">43</td><td class="py-1 px-2.5">20</td></tr>
+                <tr><td class="py-1 px-2.5">15</td><td class="py-1 px-2.5">43</td><td class="py-1 px-2.5">43</td><td class="py-1 px-2.5">0</td></tr>
+                <tr><td class="py-1 px-2.5">16</td><td class="py-1 px-2.5">43</td><td class="py-1 px-2.5">43</td><td class="py-1 px-2.5">0</td></tr>
+                <tr class="bg-white/10 font-bold text-[#edbb00]">
+                  <td class="py-1.5 px-2.5" colspan="3">Total Jejak Silinder</td>
+                  <td class="py-1.5 px-2.5">331</td>
+                </tr>
+                <tr class="bg-white/5 font-bold text-white">
+                  <td class="py-1.5 px-2.5" colspan="3">Rata-Rata per Langkah (331 / 16)</td>
+                  <td class="py-1.5 px-2.5">20,69</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 5. POSTINGAN TUGAS 2 (TABEL & ARAH PROSES LANGSUNG DI HALAMAN WEB) -->
+    <section id="postingan-tugas-2" class="space-y-4 scroll-mt-20">
+      <div class="flex flex-wrap items-center justify-between gap-2">
+        <h2 class="text-xl sm:text-2xl font-extrabold text-white">Postingan Tugas 2 — Penjadwalan Proses</h2>
+        <span class="text-[11px] font-bold px-3 py-1 rounded-full bg-[#edbb00]/20 text-[#edbb00] border border-[#edbb00]/40">
+          Deadline: 30 November 2026
+        </span>
+      </div>
+
+      <div class="barca-card rounded-3xl p-5 sm:p-8 space-y-6">
+        <!-- Data Proses Soal -->
+        <div class="barca-subcard rounded-2xl p-4 sm:p-5 space-y-3">
+          <p class="text-xs font-extrabold uppercase tracking-wider text-[#edbb00]">Data Proses Soal</p>
+          <div class="overflow-x-auto">
+            <table class="w-full text-left border-collapse text-xs sm:text-sm text-slate-200">
+              <thead>
+                <tr class="border-b border-white/15 text-[#edbb00]">
+                  <th class="py-2 px-3">Nama Proses</th>
+                  <th class="py-2 px-3">Saat Tiba</th>
+                  <th class="py-2 px-3">Lama Proses</th>
+                </tr>
+              </thead>
+              <tbody class="divide-y divide-white/10">
+                <tr><td class="py-1.5 px-3 font-bold text-white">A</td><td class="py-1.5 px-3">0</td><td class="py-1.5 px-3">8</td></tr>
+                <tr><td class="py-1.5 px-3 font-bold text-white">B</td><td class="py-1.5 px-3">3</td><td class="py-1.5 px-3">4</td></tr>
+                <tr><td class="py-1.5 px-3 font-bold text-white">C</td><td class="py-1.5 px-3">5</td><td class="py-1.5 px-3">7</td></tr>
+                <tr><td class="py-1.5 px-3 font-bold text-white">D</td><td class="py-1.5 px-3">8</td><td class="py-1.5 px-3">6</td></tr>
+                <tr><td class="py-1.5 px-3 font-bold text-white">E</td><td class="py-1.5 px-3">12</td><td class="py-1.5 px-3">5</td></tr>
+              </tbody>
+            </table>
+          </div>
+          <p class="text-[11px] text-slate-300">
+            Rumus <strong>Lama Tanggap (Turnaround Time)</strong> = Waktu Selesai &minus; Saat Tiba.
+          </p>
+        </div>
+
+        <!-- 1. FCFS / PTPD -->
+        <div class="barca-subcard rounded-2xl p-4 sm:p-5 space-y-3">
+          <h3 class="text-base font-extrabold text-white">1. FCFS / PTPD</h3>
+          <p class="text-xs text-[#edbb00] font-semibold leading-relaxed">
+            Arah Proses: A [0–8] &rarr; B [8–12] &rarr; C [12–19] &rarr; D [19–25] &rarr; E [25–30]
+          </p>
+          <div class="overflow-x-auto">
+            <table class="w-full text-left border-collapse text-xs text-slate-200">
+              <thead>
+                <tr class="border-b border-white/15 bg-black/30 text-white">
+                  <th class="py-2 px-2.5">Proses</th>
+                  <th class="py-2 px-2.5">Saat Tiba</th>
+                  <th class="py-2 px-2.5">Lama Proses</th>
+                  <th class="py-2 px-2.5">Mulai</th>
+                  <th class="py-2 px-2.5">Selesai</th>
+                  <th class="py-2 px-2.5">Lama Tanggap</th>
+                </tr>
+              </thead>
+              <tbody class="divide-y divide-white/10">
+                <tr><td class="py-1.5 px-2.5 font-bold">A</td><td class="py-1.5 px-2.5">0</td><td class="py-1.5 px-2.5">8</td><td class="py-1.5 px-2.5">0</td><td class="py-1.5 px-2.5">8</td><td class="py-1.5 px-2.5">8</td></tr>
+                <tr><td class="py-1.5 px-2.5 font-bold">B</td><td class="py-1.5 px-2.5">3</td><td class="py-1.5 px-2.5">4</td><td class="py-1.5 px-2.5">8</td><td class="py-1.5 px-2.5">12</td><td class="py-1.5 px-2.5">9</td></tr>
+                <tr><td class="py-1.5 px-2.5 font-bold">C</td><td class="py-1.5 px-2.5">5</td><td class="py-1.5 px-2.5">7</td><td class="py-1.5 px-2.5">12</td><td class="py-1.5 px-2.5">19</td><td class="py-1.5 px-2.5">14</td></tr>
+                <tr><td class="py-1.5 px-2.5 font-bold">D</td><td class="py-1.5 px-2.5">8</td><td class="py-1.5 px-2.5">6</td><td class="py-1.5 px-2.5">19</td><td class="py-1.5 px-2.5">25</td><td class="py-1.5 px-2.5">17</td></tr>
+                <tr><td class="py-1.5 px-2.5 font-bold">E</td><td class="py-1.5 px-2.5">12</td><td class="py-1.5 px-2.5">5</td><td class="py-1.5 px-2.5">25</td><td class="py-1.5 px-2.5">30</td><td class="py-1.5 px-2.5">18</td></tr>
+                <tr class="bg-white/10 font-bold text-[#edbb00]">
+                  <td class="py-1.5 px-2.5" colspan="5">Total Lama Tanggap</td>
+                  <td class="py-1.5 px-2.5">66</td>
+                </tr>
+                <tr class="bg-white/5 font-bold text-white">
+                  <td class="py-1.5 px-2.5" colspan="5">Rata-Rata Lama Tanggap (66 / 5)</td>
+                  <td class="py-1.5 px-2.5">13,20</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+        <!-- 2. SJF / PTD -->
+        <div class="barca-subcard rounded-2xl p-4 sm:p-5 space-y-3">
+          <h3 class="text-base font-extrabold text-white">2. SJF / PTD (Non-Preemptive)</h3>
+          <p class="text-xs text-[#edbb00] font-semibold leading-relaxed">
+            Arah Proses: A [0–8] &rarr; B [8–12] &rarr; E [12–17] &rarr; D [17–23] &rarr; C [23–30]
+          </p>
+          <div class="overflow-x-auto">
+            <table class="w-full text-left border-collapse text-xs text-slate-200">
+              <thead>
+                <tr class="border-b border-white/15 bg-black/30 text-white">
+                  <th class="py-2 px-2.5">Proses</th>
+                  <th class="py-2 px-2.5">Saat Tiba</th>
+                  <th class="py-2 px-2.5">Lama Proses</th>
+                  <th class="py-2 px-2.5">Mulai</th>
+                  <th class="py-2 px-2.5">Selesai</th>
+                  <th class="py-2 px-2.5">Lama Tanggap</th>
+                </tr>
+              </thead>
+              <tbody class="divide-y divide-white/10">
+                <tr><td class="py-1.5 px-2.5 font-bold">A</td><td class="py-1.5 px-2.5">0</td><td class="py-1.5 px-2.5">8</td><td class="py-1.5 px-2.5">0</td><td class="py-1.5 px-2.5">8</td><td class="py-1.5 px-2.5">8</td></tr>
+                <tr><td class="py-1.5 px-2.5 font-bold">B</td><td class="py-1.5 px-2.5">3</td><td class="py-1.5 px-2.5">4</td><td class="py-1.5 px-2.5">8</td><td class="py-1.5 px-2.5">12</td><td class="py-1.5 px-2.5">9</td></tr>
+                <tr><td class="py-1.5 px-2.5 font-bold">E</td><td class="py-1.5 px-2.5">12</td><td class="py-1.5 px-2.5">5</td><td class="py-1.5 px-2.5">12</td><td class="py-1.5 px-2.5">17</td><td class="py-1.5 px-2.5">5</td></tr>
+                <tr><td class="py-1.5 px-2.5 font-bold">D</td><td class="py-1.5 px-2.5">8</td><td class="py-1.5 px-2.5">6</td><td class="py-1.5 px-2.5">17</td><td class="py-1.5 px-2.5">23</td><td class="py-1.5 px-2.5">15</td></tr>
+                <tr><td class="py-1.5 px-2.5 font-bold">C</td><td class="py-1.5 px-2.5">5</td><td class="py-1.5 px-2.5">7</td><td class="py-1.5 px-2.5">23</td><td class="py-1.5 px-2.5">30</td><td class="py-1.5 px-2.5">25</td></tr>
+                <tr class="bg-white/10 font-bold text-[#edbb00]">
+                  <td class="py-1.5 px-2.5" colspan="5">Total Lama Tanggap</td>
+                  <td class="py-1.5 px-2.5">62</td>
+                </tr>
+                <tr class="bg-white/5 font-bold text-white">
+                  <td class="py-1.5 px-2.5" colspan="5">Rata-Rata Lama Tanggap (62 / 5)</td>
+                  <td class="py-1.5 px-2.5">12,40</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+        <!-- 3. SRT / PTDP -->
+        <div class="barca-subcard rounded-2xl p-4 sm:p-5 space-y-3">
+          <h3 class="text-base font-extrabold text-white">3. SRT / PTDP (Preemptive Shortest Remaining Time)</h3>
+          <p class="text-xs text-[#edbb00] font-semibold leading-relaxed">
+            Arah Proses: A [0–3] &rarr; B [3–7] &rarr; A [7–12] &rarr; E [12–17] &rarr; D [17–23] &rarr; C [23–30]
+          </p>
+          <div class="overflow-x-auto">
+            <table class="w-full text-left border-collapse text-xs text-slate-200">
+              <thead>
+                <tr class="border-b border-white/15 bg-black/30 text-white">
+                  <th class="py-2 px-2.5">Proses</th>
+                  <th class="py-2 px-2.5">Saat Tiba</th>
+                  <th class="py-2 px-2.5">Lama Proses</th>
+                  <th class="py-2 px-2.5">Mulai Pertama</th>
+                  <th class="py-2 px-2.5">Selesai</th>
+                  <th class="py-2 px-2.5">Lama Tanggap</th>
+                </tr>
+              </thead>
+              <tbody class="divide-y divide-white/10">
+                <tr><td class="py-1.5 px-2.5 font-bold">A</td><td class="py-1.5 px-2.5">0</td><td class="py-1.5 px-2.5">8</td><td class="py-1.5 px-2.5">0</td><td class="py-1.5 px-2.5">12</td><td class="py-1.5 px-2.5">12</td></tr>
+                <tr><td class="py-1.5 px-2.5 font-bold">B</td><td class="py-1.5 px-2.5">3</td><td class="py-1.5 px-2.5">4</td><td class="py-1.5 px-2.5">3</td><td class="py-1.5 px-2.5">7</td><td class="py-1.5 px-2.5">4</td></tr>
+                <tr><td class="py-1.5 px-2.5 font-bold">C</td><td class="py-1.5 px-2.5">5</td><td class="py-1.5 px-2.5">7</td><td class="py-1.5 px-2.5">23</td><td class="py-1.5 px-2.5">30</td><td class="py-1.5 px-2.5">25</td></tr>
+                <tr><td class="py-1.5 px-2.5 font-bold">D</td><td class="py-1.5 px-2.5">8</td><td class="py-1.5 px-2.5">6</td><td class="py-1.5 px-2.5">17</td><td class="py-1.5 px-2.5">23</td><td class="py-1.5 px-2.5">15</td></tr>
+                <tr><td class="py-1.5 px-2.5 font-bold">E</td><td class="py-1.5 px-2.5">12</td><td class="py-1.5 px-2.5">5</td><td class="py-1.5 px-2.5">12</td><td class="py-1.5 px-2.5">17</td><td class="py-1.5 px-2.5">5</td></tr>
+                <tr class="bg-white/10 font-bold text-[#edbb00]">
+                  <td class="py-1.5 px-2.5" colspan="5">Total Lama Tanggap</td>
+                  <td class="py-1.5 px-2.5">61</td>
+                </tr>
+                <tr class="bg-white/5 font-bold text-white">
+                  <td class="py-1.5 px-2.5" colspan="5">Rata-Rata Lama Tanggap (61 / 5)</td>
+                  <td class="py-1.5 px-2.5">12,20</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+        <!-- 4. HPRN / RPTD -->
+        <div class="barca-subcard rounded-2xl p-4 sm:p-5 space-y-3">
+          <h3 class="text-base font-extrabold text-white">4. HPRN / RPTD (Highest Penalty Ratio Next)</h3>
+          <p class="text-xs text-[#edbb00] font-semibold leading-relaxed">
+            Arah Proses: A [0–8] &rarr; B [8–12] &rarr; C [12–19] &rarr; D [19–25] &rarr; E [25–30]
+          </p>
+          <div class="overflow-x-auto">
+            <table class="w-full text-left border-collapse text-xs text-slate-200">
+              <thead>
+                <tr class="border-b border-white/15 bg-black/30 text-white">
+                  <th class="py-2 px-2.5">Proses</th>
+                  <th class="py-2 px-2.5">Saat Tiba</th>
+                  <th class="py-2 px-2.5">Lama Proses</th>
+                  <th class="py-2 px-2.5">Mulai</th>
+                  <th class="py-2 px-2.5">Selesai</th>
+                  <th class="py-2 px-2.5">Lama Tanggap</th>
+                </tr>
+              </thead>
+              <tbody class="divide-y divide-white/10">
+                <tr><td class="py-1.5 px-2.5 font-bold">A</td><td class="py-1.5 px-2.5">0</td><td class="py-1.5 px-2.5">8</td><td class="py-1.5 px-2.5">0</td><td class="py-1.5 px-2.5">8</td><td class="py-1.5 px-2.5">8</td></tr>
+                <tr><td class="py-1.5 px-2.5 font-bold">B</td><td class="py-1.5 px-2.5">3</td><td class="py-1.5 px-2.5">4</td><td class="py-1.5 px-2.5">8</td><td class="py-1.5 px-2.5">12</td><td class="py-1.5 px-2.5">9</td></tr>
+                <tr><td class="py-1.5 px-2.5 font-bold">C</td><td class="py-1.5 px-2.5">5</td><td class="py-1.5 px-2.5">7</td><td class="py-1.5 px-2.5">12</td><td class="py-1.5 px-2.5">19</td><td class="py-1.5 px-2.5">14</td></tr>
+                <tr><td class="py-1.5 px-2.5 font-bold">D</td><td class="py-1.5 px-2.5">8</td><td class="py-1.5 px-2.5">6</td><td class="py-1.5 px-2.5">19</td><td class="py-1.5 px-2.5">25</td><td class="py-1.5 px-2.5">17</td></tr>
+                <tr><td class="py-1.5 px-2.5 font-bold">E</td><td class="py-1.5 px-2.5">12</td><td class="py-1.5 px-2.5">5</td><td class="py-1.5 px-2.5">25</td><td class="py-1.5 px-2.5">30</td><td class="py-1.5 px-2.5">18</td></tr>
+                <tr class="bg-white/10 font-bold text-[#edbb00]">
+                  <td class="py-1.5 px-2.5" colspan="5">Total Lama Tanggap</td>
+                  <td class="py-1.5 px-2.5">66</td>
+                </tr>
+                <tr class="bg-white/5 font-bold text-white">
+                  <td class="py-1.5 px-2.5" colspan="5">Rata-Rata Lama Tanggap (66 / 5)</td>
+                  <td class="py-1.5 px-2.5">13,20</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+        <!-- 5a. RR Kuantum = 3 -->
+        <div class="barca-subcard rounded-2xl p-4 sm:p-5 space-y-3">
+          <h3 class="text-base font-extrabold text-white">5a. Round Robin (Kuantum = 3)</h3>
+          <p class="text-xs text-[#edbb00] font-semibold leading-relaxed">
+            Arah Proses: A [0–3] &rarr; B [3–6] &rarr; A [6–9] &rarr; C [9–12] &rarr; B [12–13] &rarr; D [13–16] &rarr; A [16–18] &rarr; E [18–21] &rarr; C [21–24] &rarr; D [24–27] &rarr; E [27–29] &rarr; C [29–30]
+          </p>
+          <div class="overflow-x-auto">
+            <table class="w-full text-left border-collapse text-xs text-slate-200">
+              <thead>
+                <tr class="border-b border-white/15 bg-black/30 text-white">
+                  <th class="py-2 px-2.5">Proses</th>
+                  <th class="py-2 px-2.5">Saat Tiba</th>
+                  <th class="py-2 px-2.5">Lama Proses</th>
+                  <th class="py-2 px-2.5">Mulai Pertama</th>
+                  <th class="py-2 px-2.5">Selesai</th>
+                  <th class="py-2 px-2.5">Lama Tanggap</th>
+                </tr>
+              </thead>
+              <tbody class="divide-y divide-white/10">
+                <tr><td class="py-1.5 px-2.5 font-bold">A</td><td class="py-1.5 px-2.5">0</td><td class="py-1.5 px-2.5">8</td><td class="py-1.5 px-2.5">0</td><td class="py-1.5 px-2.5">18</td><td class="py-1.5 px-2.5">18</td></tr>
+                <tr><td class="py-1.5 px-2.5 font-bold">B</td><td class="py-1.5 px-2.5">3</td><td class="py-1.5 px-2.5">4</td><td class="py-1.5 px-2.5">3</td><td class="py-1.5 px-2.5">13</td><td class="py-1.5 px-2.5">10</td></tr>
+                <tr><td class="py-1.5 px-2.5 font-bold">C</td><td class="py-1.5 px-2.5">5</td><td class="py-1.5 px-2.5">7</td><td class="py-1.5 px-2.5">9</td><td class="py-1.5 px-2.5">30</td><td class="py-1.5 px-2.5">25</td></tr>
+                <tr><td class="py-1.5 px-2.5 font-bold">D</td><td class="py-1.5 px-2.5">8</td><td class="py-1.5 px-2.5">6</td><td class="py-1.5 px-2.5">13</td><td class="py-1.5 px-2.5">27</td><td class="py-1.5 px-2.5">19</td></tr>
+                <tr><td class="py-1.5 px-2.5 font-bold">E</td><td class="py-1.5 px-2.5">12</td><td class="py-1.5 px-2.5">5</td><td class="py-1.5 px-2.5">18</td><td class="py-1.5 px-2.5">29</td><td class="py-1.5 px-2.5">17</td></tr>
+                <tr class="bg-white/10 font-bold text-[#edbb00]">
+                  <td class="py-1.5 px-2.5" colspan="5">Total Lama Tanggap</td>
+                  <td class="py-1.5 px-2.5">89</td>
+                </tr>
+                <tr class="bg-white/5 font-bold text-white">
+                  <td class="py-1.5 px-2.5" colspan="5">Rata-Rata Lama Tanggap (89 / 5)</td>
+                  <td class="py-1.5 px-2.5">17,80</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+        <!-- 5b. RR Kuantum = 5 -->
+        <div class="barca-subcard rounded-2xl p-4 sm:p-5 space-y-3">
+          <h3 class="text-base font-extrabold text-white">5b. Round Robin (Kuantum = 5)</h3>
+          <p class="text-xs text-[#edbb00] font-semibold leading-relaxed">
+            Arah Proses: A [0–5] &rarr; B [5–9] &rarr; C [9–14] &rarr; A [14–17] &rarr; D [17–22] &rarr; E [22–27] &rarr; C [27–29] &rarr; D [29–30]
+          </p>
+          <div class="overflow-x-auto">
+            <table class="w-full text-left border-collapse text-xs text-slate-200">
+              <thead>
+                <tr class="border-b border-white/15 bg-black/30 text-white">
+                  <th class="py-2 px-2.5">Proses</th>
+                  <th class="py-2 px-2.5">Saat Tiba</th>
+                  <th class="py-2 px-2.5">Lama Proses</th>
+                  <th class="py-2 px-2.5">Mulai Pertama</th>
+                  <th class="py-2 px-2.5">Selesai</th>
+                  <th class="py-2 px-2.5">Lama Tanggap</th>
+                </tr>
+              </thead>
+              <tbody class="divide-y divide-white/10">
+                <tr><td class="py-1.5 px-2.5 font-bold">A</td><td class="py-1.5 px-2.5">0</td><td class="py-1.5 px-2.5">8</td><td class="py-1.5 px-2.5">0</td><td class="py-1.5 px-2.5">17</td><td class="py-1.5 px-2.5">17</td></tr>
+                <tr><td class="py-1.5 px-2.5 font-bold">B</td><td class="py-1.5 px-2.5">3</td><td class="py-1.5 px-2.5">4</td><td class="py-1.5 px-2.5">5</td><td class="py-1.5 px-2.5">9</td><td class="py-1.5 px-2.5">6</td></tr>
+                <tr><td class="py-1.5 px-2.5 font-bold">C</td><td class="py-1.5 px-2.5">5</td><td class="py-1.5 px-2.5">7</td><td class="py-1.5 px-2.5">9</td><td class="py-1.5 px-2.5">29</td><td class="py-1.5 px-2.5">24</td></tr>
+                <tr><td class="py-1.5 px-2.5 font-bold">D</td><td class="py-1.5 px-2.5">8</td><td class="py-1.5 px-2.5">6</td><td class="py-1.5 px-2.5">17</td><td class="py-1.5 px-2.5">30</td><td class="py-1.5 px-2.5">22</td></tr>
+                <tr><td class="py-1.5 px-2.5 font-bold">E</td><td class="py-1.5 px-2.5">12</td><td class="py-1.5 px-2.5">5</td><td class="py-1.5 px-2.5">22</td><td class="py-1.5 px-2.5">27</td><td class="py-1.5 px-2.5">15</td></tr>
+                <tr class="bg-white/10 font-bold text-[#edbb00]">
+                  <td class="py-1.5 px-2.5" colspan="5">Total Lama Tanggap</td>
+                  <td class="py-1.5 px-2.5">84</td>
+                </tr>
+                <tr class="bg-white/5 font-bold text-white">
+                  <td class="py-1.5 px-2.5" colspan="5">Rata-Rata Lama Tanggap (84 / 5)</td>
+                  <td class="py-1.5 px-2.5">16,80</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
         </div>
       </div>
     </section>
